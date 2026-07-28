@@ -1,11 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
+from selenium.webdriver.firefox.options import Options
 
 
 @pytest.fixture()
 def driver():
-    driver = webdriver.Firefox()
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Firefox(options=options)
     return driver
 
 
