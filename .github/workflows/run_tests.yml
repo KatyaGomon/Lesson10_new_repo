@@ -6,7 +6,7 @@ on:
       deployment_target:
         description: Choose target
         required: true
-        default: first_test
+        default:
         type: choice
         options:
           - first_test
@@ -29,7 +29,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: first_test
         if: "github.event.inputs.deployment_target == 'first_test'"
-        run: test_button.py::test_button_exist
+        run: pytest test_button.py::test_button_exist
       - name: second_test
         if: "github.event.inputs.deployment_target == 'second_test'"
-        run: test_button.py::test_button_exist_2
+        run: pytest test_button.py::test_button_exist_2
