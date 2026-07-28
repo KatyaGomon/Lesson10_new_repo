@@ -12,3 +12,7 @@ def driver():
 def test_button_exist(driver):
     driver.get("https://www.qa-practice.com/elements/button/simple")
     assert driver.find_element(By.ID, "submit-id-submit").is_displayed()
+
+def hello(driver):
+    driver.get("https://www.qa-practice.com/elements/button/simple")
+    assert driver.find_element(By.ID, "submit-id-submit").is_displayed()
