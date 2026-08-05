@@ -4,6 +4,7 @@ import pytest
 from selenium.webdriver.firefox.options import Options
 
 
+
 @pytest.fixture()
 def driver():
     options = Options()
